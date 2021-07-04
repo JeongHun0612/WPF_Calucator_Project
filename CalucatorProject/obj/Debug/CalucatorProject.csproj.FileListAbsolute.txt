@@ -1,0 +1,15 @@
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\obj\Debug\CalucatorProject.csproj.AssemblyReference.cache
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\obj\Debug\MainWindow.g.cs
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\obj\Debug\App.g.cs
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\obj\Debug\CalucatorProject_MarkupCompile.cache
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\obj\Debug\CalucatorProject_MarkupCompile.lref
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\bin\Debug\CalucatorProject.exe.config
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\bin\Debug\CalucatorProject.exe
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\bin\Debug\CalucatorProject.pdb
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\obj\Debug\MainWindow.baml
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\obj\Debug\CalucatorProject.g.resources
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\obj\Debug\CalucatorProject.Properties.Resources.resources
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\obj\Debug\CalucatorProject.csproj.GenerateResource.cache
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\obj\Debug\CalucatorProject.csproj.CoreCompileInputs.cache
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\obj\Debug\CalucatorProject.exe
+C:\Users\sjh96\source\repos\CalucatorProject\CalucatorProject\obj\Debug\CalucatorProject.pdb
