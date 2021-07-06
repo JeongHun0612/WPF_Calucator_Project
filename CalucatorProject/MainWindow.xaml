@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:CalucatorProject"
         mc:Ignorable="d"
         Title="MainWindow" Height="628.153" Width="415.745">
+
+    <!--<Viewbox Stretch="Fill"/>-->
     <Grid HorizontalAlignment="Left" Width="404" Margin="0, 0, -5, -1">
         <Grid.RowDefinitions>
             <RowDefinition Height="200"/>
@@ -23,22 +25,19 @@
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
 
-        <Label x:Name="resultPreviewLabel" Grid.ColumnSpan="4" Grid.Row="0"
-               HorizontalContentAlignment="Right" FontSize="25" Foreground="Gray" Margin="0, 40, 0, 0"/>
-        
-        <Label Content="0" x:Name="resultLabel" Grid.ColumnSpan="4" Grid.Row="0"
-               HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" FontSize="100"/>
+        <Label x:Name="resultPreviewLabel" Grid.ColumnSpan="4" Grid.Row="0" HorizontalContentAlignment="Right" FontSize="25" Foreground="Gray" Margin="0, 40, 0, 0"/>
+        <Label Content="0" x:Name="resultLabel" Grid.ColumnSpan="4" Grid.Row="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" FontSize="100"/>
 
         <Button x:Name="zeroBtn" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Content="0" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,-13" Click="numBtn_Click"/>
         <Button x:Name="oneBtn" Grid.Column="0" Grid.Row="4" Content="1" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
         <Button x:Name="twoBtn" Grid.Column="1" Grid.Row="4" Content="2" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
-            <Button x:Name="threeBtn" Grid.Column="2" Grid.Row="4" Content="3" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
+        <Button x:Name="threeBtn" Grid.Column="2" Grid.Row="4" Content="3" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
         <Button x:Name="fourBtn" Grid.Column="0" Grid.Row="3" Content="4" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
-                <Button x:Name="fiveBtn" Grid.Column="1" Grid.Row="3" Content="5" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
+        <Button x:Name="fiveBtn" Grid.Column="1" Grid.Row="3" Content="5" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
         <Button x:Name="sixBtn" Grid.Column="2" Grid.Row="3" Content="6" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
-                    <Button x:Name="sevenBtn" Grid.Column="0" Grid.Row="2" Content="7" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
+        <Button x:Name="sevenBtn" Grid.Column="0" Grid.Row="2" Content="7" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
         <Button x:Name="eightBtn" Grid.Column="1" Grid.Row="2" Content="8" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
-                        <Button x:Name="nightBtn" Grid.Column="2" Grid.Row="2" Content="9" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
+        <Button x:Name="nightBtn" Grid.Column="2" Grid.Row="2" Content="9" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
 
         <Button x:Name="acBtn" Grid.Column="0" Grid.Row="1" Content="AC" FontSize="30" Margin="5,5,5,5" Click="AcBtn_Click"/>
         <Button x:Name="plusMinusBtn" Grid.Column="1" Grid.Row="1" Content="+/-" FontSize="30" Margin="5,5,5,5" Click="PlusMinusBtn_Click"/>
@@ -50,4 +49,5 @@
         <Button x:Name="dotBtn" Grid.Column="2" Grid.Row="5" Content="." Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,-13" Click="dotBtn_Click"/>
         <Button x:Name="resultBtn" Grid.Column="3" Grid.Row="5" Content="="  Background="Green" FontSize="30" Margin="5,5,5,-13" Click="resultBtn_Click"/>
     </Grid>
+
 </Window>
