@@ -39,15 +39,15 @@
         <Button x:Name="eightBtn" Grid.Column="1" Grid.Row="2" Content="8" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
         <Button x:Name="nightBtn" Grid.Column="2" Grid.Row="2" Content="9" Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,5" Click="numBtn_Click"/>
 
-        <Button x:Name="acBtn" Grid.Column="0" Grid.Row="1" Content="AC" FontSize="30" Margin="5,5,5,5" Click="AcBtn_Click"/>
-        <Button x:Name="plusMinusBtn" Grid.Column="1" Grid.Row="1" Content="+/-" FontSize="30" Margin="5,5,5,5" Click="PlusMinusBtn_Click"/>
-        <Button x:Name="percentBtn" Grid.Column="2" Grid.Row="1" Content="%" FontSize="30" Margin="5,5,5,5" Click="PercentBtn_Click"/>
-        <Button x:Name="divideBtn" Grid.Column="3" Grid.Row="1" Content="/" Background="Green" FontSize="30" Margin="5,5,5,5" Click="operationBtn_Click"/>
-        <Button x:Name="multBtn" Grid.Column="3" Grid.Row="2" Content="*"  Background="Green" FontSize="30" Margin="5,5,5,5" Click="operationBtn_Click"/>
-        <Button x:Name="minusBtn" Grid.Column="3" Grid.Row="3" Content="-" Background="Green" FontSize="30" Margin="5,5,5,5" Click="operationBtn_Click"/>
-        <Button x:Name="plusBtn" Grid.Column="3" Grid.Row="4" Content="+"  Background="Green" FontSize="30" Margin="5,5,5,5" Click="operationBtn_Click"/>
+        <Button x:Name="acBtn" Grid.Column="2" Grid.Row="1" Content="C" FontSize="30" Margin="5,5,5,5" Click="AllClearBtn_Click"/>
+        <Button x:Name="plusMinusBtn" Grid.Column="1" Grid.Row="1" Content="CE" FontSize="30" Margin="5,5,5,5" Click="ClearBtn_Click"/>
+        <Button x:Name="percentBtn" Grid.Column="0" Grid.Row="1" Content="%" FontSize="30" Margin="5,5,5,5" Click="PercentBtn_Click"/>
+        <Button x:Name="divideBtn" Grid.Column="3" Grid.Row="1" Content="÷" FontSize="30" Margin="5,5,5,5" Click="operationBtn_Click"/>
+        <Button x:Name="multBtn" Grid.Column="3" Grid.Row="2" Content="×"  FontSize="30" Margin="5,5,5,5" Click="operationBtn_Click"/>
+        <Button x:Name="minusBtn" Grid.Column="3" Grid.Row="3" Content="-" FontSize="30" Margin="5,5,5,5" Click="operationBtn_Click"/>
+        <Button x:Name="plusBtn" Grid.Column="3" Grid.Row="4" Content="+"  FontSize="30" Margin="5,5,5,5" Click="operationBtn_Click"/>
         <Button x:Name="dotBtn" Grid.Column="2" Grid.Row="5" Content="." Foreground="White" Background="Gray" FontSize="30" Margin="5,5,5,-13" Click="dotBtn_Click"/>
-        <Button x:Name="resultBtn" Grid.Column="3" Grid.Row="5" Content="="  Background="Green" FontSize="30" Margin="5,5,5,-13" Click="resultBtn_Click"/>
+        <Button x:Name="resultBtn" Grid.Column="3" Grid.Row="5" Content="="  Background="SkyBlue" FontSize="30" Margin="5,5,5,-13" Click="resultBtn_Click"/>
     </Grid>
 
 </Window>

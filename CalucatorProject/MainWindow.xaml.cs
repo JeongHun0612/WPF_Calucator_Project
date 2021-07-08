@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace CalucatorProject
@@ -12,6 +11,7 @@ namespace CalucatorProject
         private double firstNumber = 0.0;
         private double secondNumber = 0.0;
         private double resultNumber = 0.0;
+
         private string selectedOperator = null;
         private string progressResultLabelContent = null;
 
@@ -20,14 +20,6 @@ namespace CalucatorProject
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        public enum SelectedOperator
-        {
-            Addition,
-            Subtraction,
-            Multipleication,
-            Division
         }
 
         public class SimpleMath
@@ -52,7 +44,7 @@ namespace CalucatorProject
                 return n1 / n2;
             }
         }
- 
+
         private void numBtn_Click(object sender, RoutedEventArgs e)
         {
             Button[] numBtnArray = { zeroBtn, oneBtn, twoBtn, threeBtn, fourBtn, fiveBtn, sixBtn, sevenBtn, eightBtn, nightBtn };
@@ -67,87 +59,66 @@ namespace CalucatorProject
                     resultLabel.Content = progressResultLabelContent;
                 }
             }
-
             isCalu = false;
         }
 
         private void operationBtn_Click(object sender, RoutedEventArgs e)
         {
-            void test(string m_operator)
+            void calculation(string m_selectedOperator)
             {
-                if (!isCalu)
+                selectedOperator = m_selectedOperator;
+                if (resultPreviewLabel.Content != null && !isCalu)
                 {
                     isCalu = true;
+                    double.TryParse(resultLabel.Content.ToString(), out secondNumber);
+                    string lastString = resultPreviewLabel.Content.ToString().Substring(resultPreviewLabel.Content.ToString().Length - 1);
 
-                    if (resultPreviewLabel.Content == null)
+                    switch (lastString)
                     {
-                        double.TryParse(resultLabel.Content.ToString(), out firstNumber);
+                        case "+":
+                            resultNumber = SimpleMath.Add(firstNumber, secondNumber);
+                            break;
+                        case "-":
+                            resultNumber = SimpleMath.Subtract(firstNumber, secondNumber);
+                            break;
+                        case "×":
+                            resultNumber = SimpleMath.Multiple(firstNumber, secondNumber);
+                            break;
+                        case "÷":
+                            resultNumber = SimpleMath.Divide(firstNumber, secondNumber);
+                            break;
                     }
-                    else
-                    {
-                        double.TryParse(resultLabel.Content.ToString(), out secondNumber);
-
-                        string lastString = resultPreviewLabel.Content.ToString().Substring(resultPreviewLabel.Content.ToString().Length - 1);
-
-                        switch (lastString)
-                        {
-                            case "+":
-                                resultNumber = SimpleMath.Add(firstNumber, secondNumber);
-                                break;
-                            case "-":
-                                resultNumber = SimpleMath.Subtract(firstNumber, secondNumber);
-                                break;
-                            case "*":
-                                resultNumber = SimpleMath.Multiple(firstNumber, secondNumber);
-                                break;
-                            case "/":
-                                resultNumber = SimpleMath.Divide(firstNumber, secondNumber);
-                                break;
-                        }
-                        resultLabel.Content = resultNumber;
-                        firstNumber = resultNumber;
-                    }
-                    resultPreviewLabel.Content += progressResultLabelContent + m_operator;
-                    progressResultLabelContent = null;
+                    resultPreviewLabel.Content = resultNumber.ToString() + m_selectedOperator;
+                    resultLabel.Content = resultNumber.ToString();
+                    firstNumber = resultNumber;
                 }
                 else
                 {
-                    resultPreviewLabel.Content = resultPreviewLabel.Content.ToString().Substring(0, resultPreviewLabel.Content.ToString().Length - 1) + m_operator;
+                    isCalu = true;
+                    resultPreviewLabel.Content = resultLabel.Content.ToString() + m_selectedOperator;
+                    double.TryParse(resultLabel.Content.ToString(), out firstNumber);
                 }
+                progressResultLabelContent = null;
             }
-
-
-            if (sender == plusBtn)
-            {
-                selectedOperator = "+";
-                test(selectedOperator);
-            }
-
-            if (sender == minusBtn)
-            {
-                selectedOperator = "-";
-                test(selectedOperator);
-            }
-            if (sender == multBtn)
-            {
-                selectedOperator = "*";
-                test(selectedOperator);
-            }
-            if (sender == divideBtn)
-            {
-                selectedOperator = "/";
-                test(selectedOperator);
-            }
-
+            if (sender == plusBtn) calculation("+");
+            if (sender == minusBtn) calculation("-");
+            if (sender == multBtn) calculation("×");
+            if (sender == divideBtn) calculation("÷");
         }
-        private void AcBtn_Click(object sender, RoutedEventArgs e)
+        private void AllClearBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            resultLabel.Content = "0";
+            progressResultLabelContent = null;
+            resultPreviewLabel.Content = null;
+            firstNumber = 0.0;
+            secondNumber = 0.0;
+            selectedOperator = null;
         }
 
-        private void PlusMinusBtn_Click(object sender, RoutedEventArgs e)
+        private void ClearBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            resultLabel.Content = "0";
+            progressResultLabelContent = null;
         }
 
         private void PercentBtn_Click(object sender, RoutedEventArgs e)
@@ -157,32 +128,48 @@ namespace CalucatorProject
 
         private void resultBtn_Click(object sender, RoutedEventArgs e)
         {
-            double.TryParse(resultLabel.Content.ToString(), out secondNumber);
-
-            string lastString = resultPreviewLabel.Content.ToString().Substring(resultPreviewLabel.Content.ToString().Length - 1);
-
-            switch (lastString)
+            if (resultPreviewLabel.Content != null && !isCalu)
             {
-                case "+":
-                    resultNumber = SimpleMath.Add(firstNumber, secondNumber);
-                    break;
-                case "-":
-                    resultNumber = SimpleMath.Subtract(firstNumber, secondNumber);
-                    break;
-                case "*":
-                    resultNumber = SimpleMath.Multiple(firstNumber, secondNumber);
-                    break;
-                case "/":
-                    resultNumber = SimpleMath.Divide(firstNumber, secondNumber);
-                    break;
+                isCalu = true;
+                double.TryParse(resultLabel.Content.ToString(), out secondNumber);
+
+                switch (selectedOperator)
+                {
+                    case "+":
+                        resultNumber = SimpleMath.Add(firstNumber, secondNumber);
+                        break;
+                    case "-":
+                        resultNumber = SimpleMath.Subtract(firstNumber, secondNumber);
+                        break;
+                    case "×":
+                        resultNumber = SimpleMath.Multiple(firstNumber, secondNumber);
+                        break;
+                    case "÷":
+                        resultNumber = SimpleMath.Divide(firstNumber, secondNumber);
+                        break;
+                }
+                resultPreviewLabel.Content = firstNumber.ToString() + selectedOperator + secondNumber.ToString() + "=";
+                resultLabel.Content = resultNumber.ToString();
+                firstNumber = resultNumber;
             }
-            resultLabel.Content = resultNumber;
-            resultPreviewLabel.Content = null;
+            else
+            {
+                resultPreviewLabel.Content = resultLabel.Content + "=";
+            }
+            progressResultLabelContent = null;
         }
 
         private void dotBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (sender == dotBtn)
+            {
+                if (resultLabel.Content.ToString().Contains(".") == false)
+                {
+                    progressResultLabelContent = resultLabel.Content + ".";
+                    resultLabel.Content += ".";
+                }
+            }
         }
     }
 }
+
